@@ -1,5 +1,6 @@
 const form = document.querySelector('.form-add-todo')
 const ul = document.querySelector('.todos-container')
+const alerta = document.querySelector('.alerta')
 
 form.addEventListener('submit', event => {
     event.preventDefault()
@@ -12,8 +13,17 @@ form.addEventListener('submit', event => {
         <i class="far fa-trash-alt delete"></i>
       </li>    
       `
-    }else{
-        alert('teste')
+
+    } else {
+        alerta.classList.remove('d-none')
+        setTimeout(sumirAlerta, 2000)
     }
+    function sumirAlerta() {
+        alerta.classList.add('d-none')
+    }
+
+
     event.target.reset()
+
+
 })
