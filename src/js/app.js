@@ -1,5 +1,6 @@
 const form = document.querySelector('.form-add-todo')
 const container = document.querySelector('.todos-container')
+const inputSearch = document.querySelector('.form-search input')
 const alerta = document.querySelector('.alert-danger')
 const alertSuccess = document.querySelector('.alert-success')
 const alertRemove = document.querySelector('.alert-warning')
@@ -11,7 +12,6 @@ const funcError = () => {
         alerta.classList.add('d-none')
     }, 3000);
 }
-
 /* Função Success */
 const funcSuccess = () => {
     alertSuccess.classList.remove('d-none')
@@ -20,8 +20,6 @@ const funcSuccess = () => {
     }, 3000);
     form.reset()
 }
-
-
 /* Função Remove */
 const funcRemove = () => {
     alertRemove.classList.remove('d-none')
@@ -46,7 +44,6 @@ form.addEventListener('submit', event => {
         `
     }
 })
-
 container.addEventListener('click', event => {
     const clickedElement = event.target
     const arrayElement = Array.from(clickedElement.classList).includes('delete')
@@ -58,3 +55,6 @@ container.addEventListener('click', event => {
     }
 })
 
+inputSearch.addEventListener('input', event => {
+    console.log(event.target.value.trim())
+})
