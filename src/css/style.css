@@ -17,7 +17,53 @@ input[type="text"]:focus {
 .delete {
   cursor: pointer;
 }
-
 .alerta {
-  margin: auto;
+  align-items: flex-end;
+}
+.alert-danger {
+  min-width: 20px;
+  position: absolute;
+  right: -0px;
+  top: 10px;
+}
+.alert-success {
+  min-width: 20px;
+  position: absolute;
+  right: -0px;
+  top: 10px;
+}
+.fadeIn {
+  animation: show-slide ease forwards;
+}
+@keyframes show-slide {
+  0% {
+    transform: translateX(100%);
+  }
+  40% {
+    transform: translateX(-0%);
+  }
+  80% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-10%);
+  }
+}
+
+.fadeOut {
+  animation: hide-slide ease forwards;
+}
+@keyframes hide-slide {
+  0% {
+    transform: translateX(-10%);
+  }
+  40% {
+    transform: translateX(0%);
+  }
+  80% {
+    transform: translateX(-10%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
 }
