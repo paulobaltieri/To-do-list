@@ -2,6 +2,7 @@ const form = document.querySelector('.form-add-todo')
 const container = document.querySelector('.todos-container')
 const alerta = document.querySelector('.alert-danger')
 const alertSuccess = document.querySelector('.alert-success')
+const alertRemove = document.querySelector('.alert-warning')
 
 /* Função Error */
 const funcError = () => {
@@ -20,6 +21,16 @@ const funcSuccess = () => {
     form.reset()
 }
 
+
+/* Função Remove */
+const funcRemove = () => {
+    alertRemove.classList.remove('d-none')
+    setTimeout(() => {
+        alertRemove.classList.add('d-none')
+    }, 3000);
+    form.reset()
+}
+
 form.addEventListener('submit', event => {
     event.preventDefault()
     const inputValue = event.target.add.value.trim()
@@ -34,6 +45,16 @@ form.addEventListener('submit', event => {
         </li>
         `
     }
-    console.log(inputValue)
+})
+
+container.addEventListener('click', event => {
+    const clickedElement = event.target
+    const arrayElement = Array.from(clickedElement.classList).includes('delete')
+    console.log(arrayElement)
+
+    if (arrayElement === true) {
+        clickedElement.parentElement.remove()
+        funcRemove()
+    }
 })
 

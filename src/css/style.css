@@ -32,6 +32,12 @@ input[type="text"]:focus {
   right: -0px;
   top: 10px;
 }
+.alert-warning{
+  min-width: 20px;
+  position: absolute;
+  right: -0px;
+  top: 10px;
+}
 .fadeIn {
   animation: show-slide ease forwards;
 }
