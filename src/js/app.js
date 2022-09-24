@@ -56,5 +56,9 @@ container.addEventListener('click', event => {
 })
 
 inputSearch.addEventListener('input', event => {
-    console.log(event.target.value.trim())
+    const inputValue = event.target.value.trim()
+    const filterLis = Array.from(container.children).filter(item => {
+        return item.textContent.includes(inputValue)
+    })
+    console.log(filterLis)
 })
