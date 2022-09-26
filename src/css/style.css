@@ -59,6 +59,10 @@ input[type="text"]:focus {
 .fadeOut {
   animation: hide-slide ease forwards;
 }
+.hidden{
+  display: none;
+}
+
 @keyframes hide-slide {
   0% {
     transform: translateX(-10%);

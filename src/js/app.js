@@ -56,9 +56,17 @@ container.addEventListener('click', event => {
 })
 
 inputSearch.addEventListener('input', event => {
-    const inputValue = event.target.value.trim()
-    const filterLis = Array.from(container.children).filter(item => {
-        return item.textContent.includes(inputValue)
-    })
-    console.log(filterLis)
+    const inputValue = event.target.value.trim().toLowerCase()
+    Array.from(container.children)
+        .filter(item => !item.textContent.toLowerCase().includes(inputValue))
+        .forEach(item => {
+            item.classList.remove('d-flex')
+            item.classList.add('hidden')
+        })
+    Array.from(container.children)
+        .filter(item => item.textContent.includes(inputValue))
+        .forEach(item => {
+            item.classList.remove('hidden')
+            item.classList.add('d-flex')
+        })
 })
