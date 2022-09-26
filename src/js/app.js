@@ -4,6 +4,7 @@ const inputSearch = document.querySelector('.form-search input')
 const alerta = document.querySelector('.alert-danger')
 const alertSuccess = document.querySelector('.alert-success')
 const alertRemove = document.querySelector('.alert-warning')
+const alertaBusca = document.querySelector('.alert-danger')
 
 /* Função Error */
 const funcError = () => {
@@ -27,6 +28,13 @@ const funcRemove = () => {
         alertRemove.classList.add('d-none')
     }, 3000);
     form.reset()
+}
+/* Função pesquisar Error */
+const funcPesquisarError = () => {
+    alerta.classList.remove('d-none')
+    setTimeout(() => {
+        alerta.classList.add('d-none')
+    }, 3000);
 }
 
 form.addEventListener('submit', event => {
